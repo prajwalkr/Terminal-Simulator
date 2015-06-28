@@ -126,6 +126,17 @@ public:
                 return;
             }
             base_command = command;
+            if (base_command == "cd")
+            	cout << "\nusage: cd <path>\n";
+            else if (base_command == "touch")
+	            cout << "\nusage: touch <filepath>\n";
+	        else if (base_command == "mkdir")
+	        	cout << "\nusage: mkdir <dir path>\n";
+	        else if (base_command == "cat")
+	        	cout << "\nusage cat <file path>\n";
+	        else if (base_command == "chmod")
+	        	cout << "\nusage: chmod [-R][--reference] <mode> <filelist>\n";
+	        return;
         }
 	    else base_command = command.substr(0,command.find(" "));
 		for (int i = 0; i < valid_commands.size(); ++i)
